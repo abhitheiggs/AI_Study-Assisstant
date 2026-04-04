@@ -1,0 +1,9 @@
+Flask
+Werkzeug
+PyPDF2
+transformers
+torch
+openai
+chromadb
+google-genai
+

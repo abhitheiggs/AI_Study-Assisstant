@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - AI Study Assistant</title>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="card auth-card">
+        <i class="ph-fill ph-student" style="font-size: 48px; color: var(--primary); margin-bottom: 16px;"></i>
+        <h1>Create Account</h1>
+        <p class="muted">Join today to start supercharging your study sessions.</p>
+
+        {% if error %}
+        <div class="alert"><i class="ph-fill ph-warning-circle"></i> {{ error }}</div>
+        {% endif %}
+
+        <form method="POST" action="/register" class="form">
+          <label>
+            <span>Full Name</span>
+            <input type="text" name="name" placeholder="Alex Doe" required />
+          </label>
+          <label>
+            <span>Email Address</span>
+            <input type="email" name="email" placeholder="you@university.edu" required />
+          </label>
+          <label>
+            <span>Password</span>
+            <input type="password" name="password" placeholder="Min. 4 characters" required minlength="4" />
+          </label>
+          <button class="btn primary" type="submit" style="margin-top: 8px;">Sign Up <i class="ph-bold ph-arrow-right"></i></button>
+        </form>
+
+        <div class="footer-links" style="justify-content: center;">
+          <span class="muted">Already have an account?</span>
+          <a href="/login" style="font-weight: 600;">Log In</a>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function () {
+        try { document.documentElement.dataset.theme = localStorage.getItem("ai_study_theme") || "violet"; } catch (e) {}
+      })();
+    </script>
+  </body>
+</html>
