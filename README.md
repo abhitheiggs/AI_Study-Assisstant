@@ -1,1 +1,1 @@
-# AI_Study-Aississtant
+# AI-Study-Assisstant
